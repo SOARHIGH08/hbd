@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
+}
+
+body {
+    margin: 0;
+    background: #020202;
+    cursor: crosshair;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas{
+    display:block;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+h1 {
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 5em;
+    font-weight: 900;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.audio {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+  
+  h1::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    background-image: conic-gradient(
+          #ff0080,
+          #ff0080,
+          #ff0080,
+          #ff0080,
+          #ff0080,
+          #ff0080,
+          #ff0080
+      );
+    -webkit-mask-image: var(--m-i), var(--m-i);
+    mask-image: var(--m-i), var(--m-i);
+    -webkit-mask-origin: var(--m-o);
+    mask-origin: var(--m-o);
+    mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: rotate-hue634 linear 500ms infinite;
+    animation-play-state: paused;
+  }
+  
+  h1:hover::after {
+    animation-play-state: running;
+  }
+  
+  @keyframes rotate-hue634 {
+    to {
+      filter: hue-rotate(1turn);
+    }
+  }
+  
+ 
+  
+  .bn {
+    padding: 1px 30px 30px 30px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-family: inherit;
+    text-align: center;
+    font-weight: 500;
+    font-size: 5em;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .bn::after {
+    content: "";
+    z-index: -1;
+    background-color: rgb(46, 46, 46);
+    text-align: center;
+  }
+  
+  .bn::before {
+    content: "";
+    border-radius: 40px;
+    background: linear-gradient(
+      45deg,
+      #07d888, #e40851, #2f00ff, #00ff37,
+        #ec0808, #2600ff, #0bd157, #2f00ff
+  );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 1000%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(80% + 4px);
+    filter: blur(8px);
+    animation: glowing345 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+    text-align: center;
+  }
+  
+  @keyframes glowing345 {
+    0% {
+      background-position: 0 0;
+    }
+  
+    50% {
+      background-position: 400% 0;
+    }
+  
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .bn:hover::before {
+    opacity: 1;
+  }
+  
+  .bn:active:after {
+    background: transparent;
+  }
+  
+  .bn:active {
+    color: #000;
+    font-weight: bold;
+  }
